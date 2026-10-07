@@ -1,220 +1,328 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[codz]
-*$py.class
+* {
+  box-sizing: border-box;
+}
 
-# C extensions
-*.so
+:root {
+  --bg: #f7f3ee;
+  --bg-strong: #efe5dc;
+  --card: #fffdfb;
+  --text: #1d1b1a;
+  --muted: #6a625d;
+  --accent: #b77b5d;
+  --accent-dark: #8e5d3f;
+  --border: rgba(29, 27, 26, 0.08);
+  --shadow: 0 20px 60px rgba(42, 28, 20, 0.08);
+}
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+html {
+  scroll-behavior: smooth;
+}
 
-# PyInstaller
-#   Usually these files are written by a python script from a template
-#   before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py.cover
-*.lcov
-.hypothesis/
-.pytest_cache/
-cover/
+img {
+  display: block;
+  max-width: 100%;
+}
 
-# Translations
-*.mo
-*.pot
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(247, 243, 238, 0.85);
+  border-bottom: 1px solid var(--border);
+}
 
-# Flask stuff:
-instance/
-.webassets-cache
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80px;
+}
 
-# Scrapy stuff:
-.scrapy
+.brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  letter-spacing: 0.04em;
+}
 
-# Sphinx documentation
-docs/_build/
+nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
 
-# PyBuilder
-.pybuilder/
-target/
+.hero {
+  padding: 5rem 0 4rem;
+}
 
-# Jupyter Notebook
-.ipynb_checkpoints
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+}
 
-# IPython
-profile_default/
-ipython_config.py
+.eyebrow {
+  margin: 0;
+  color: var(--accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
 
-# pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  margin: 0;
+  line-height: 1.05;
+}
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-# Pipfile.lock
+h1 {
+  font-size: clamp(3rem, 5vw, 5rem);
+  margin-top: 0.7rem;
+  font-weight: 600;
+}
 
-# uv
-#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-# uv.lock
+h2 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  margin-top: 0.6rem;
+  font-weight: 600;
+}
 
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-# poetry.lock
-# poetry.toml
+.lead {
+  max-width: 560px;
+  margin: 1.25rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
 
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#   pdm recommends including project-wide configuration in pdm.toml, but excluding .pdm-python.
-#   https://pdm-project.org/en/latest/usage/project/#working-with-version-control
-# pdm.lock
-# pdm.toml
-.pdm-python
-.pdm-build/
+.cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
 
-# pixi
-#   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
-# pixi.lock
-#   Pixi creates a virtual environment in the .pixi directory, just like venv module creates one
-#   in the .venv directory. It is recommended not to include this directory in version control.
-.pixi/*
-!.pixi/config.toml
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
+.btn:hover {
+  transform: translateY(-2px);
+}
 
-# Celery stuff
-celerybeat-schedule*
-celerybeat.pid
+.btn-primary {
+  background: var(--text);
+  color: white;
+  box-shadow: var(--shadow);
+}
 
-# Redis
-*.rdb
-*.aof
-*.pid
+.btn-secondary {
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.3);
+}
 
-# RabbitMQ
-mnesia/
-rabbitmq/
-rabbitmq-data/
+.hero-image img {
+  border-radius: 28px;
+  width: 100%;
+  min-height: 580px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
 
-# ActiveMQ
-activemq-data/
+.portfolio,
+.about,
+.services {
+  padding: 4.5rem 0;
+}
 
-# SageMath parsed files
-*.sage.py
+.section-head {
+  margin-bottom: 2rem;
+}
 
-# Environments
-.env
-.envrc
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
 
-# Spyder project settings
-.spyderproject
-.spyproject
+.project-card {
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
 
-# Rope project settings
-.ropeproject
+.project-card img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
 
-# mkdocs/Zensical documentation
-/site
+.card-info {
+  padding: 1.2rem 1.2rem 1.4rem;
+}
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+.card-info h3 {
+  font-size: 2rem;
+}
 
-# Pyre type checker
-.pyre/
+.card-info p {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+}
 
-# pytype static type analyzer
-.pytype/
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2rem;
+  align-items: center;
+}
 
-# Cython debug symbols
-cython_debug/
+.about-photo img {
+  width: 100%;
+  min-height: 540px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
 
-# PyCharm
-#   JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#   be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#   and can be added to the global gitignore or merged into this file.  For a more nuclear
-#   option (not recommended) you can uncomment the following to ignore the entire idea folder.
-# .idea/
+.about-copy p {
+  color: var(--muted);
+  font-size: 1.02rem;
+}
 
-# Abstra
-#   Abstra is an AI-powered process automation framework.
-#   Ignore directories containing user credentials, local state, and settings.
-#   Learn more at https://abstra.io/docs
-.abstra/
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
 
-# Visual Studio Code
-#   Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore that
-#   can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
-#   and can be added to the global gitignore or merged into this file. However, if you prefer, you
-#   could uncomment the following to ignore the entire vscode folder
-# .vscode/
-# Temporary file for partial code execution
-tempCodeRunnerFile.py
+.service-box {
+  background: rgba(255,255,255,0.32);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 1.7rem;
+  box-shadow: var(--shadow);
+}
 
-# Ruff stuff:
-.ruff_cache/
+.service-box span {
+  font-size: 0.9rem;
+  color: var(--accent-dark);
+  font-weight: 700;
+}
 
-# PyPI configuration file
-.pypirc
+.service-box h3 {
+  margin-top: 0.8rem;
+  font-size: 2.3rem;
+}
 
-# Marimo
-marimo/_static/
-marimo/_lsp/
-__marimo__/
+.service-box p {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+}
 
-# Streamlit
-.streamlit/secrets.toml
+.contact {
+  padding: 2rem 0 5rem;
+}
+
+.contact-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 2.4rem;
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(238,228,218,0.8));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.2rem 0 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  color: var(--muted);
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .hero-inner,
+  .about-grid,
+  .gallery-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image img {
+    min-height: 420px;
+  }
+
+  .contact-box,
+  .nav,
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand {
+    font-size: 2.2rem;
+  }
+
+  nav {
+    gap: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    padding-top: 3rem;
+  }
+
+  .contact-box {
+    padding: 1.5rem;
+  }
+}

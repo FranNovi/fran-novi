@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <meta name="description" content="Portafolio de fotografía personal con estilo editorial y natural." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="brand">Fran Novi</div>
+        <nav>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#about">Sobre mí</a>
+          <a href="#services">Servicios</a>
+          <a href="#contact">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Fotografía documental</p>
+            <h1>Capturo momentos con luz, emoción y detalle.</h1>
+            <p class="lead">
+              Trabajo con retratos, bodas, viajes y proyectos editoriales con un enfoque natural,
+              íntimo y visualmente elegante.
+            </p>
+            <div class="cta-group">
+              <a class="btn btn-primary" href="#portfolio">Ver portfolio</a>
+              <a class="btn btn-secondary" href="#contact">Reservar sesión</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1521119989659-a83eee488004?auto=format&fit=crop&w=900&q=80" alt="Retrato de fotógrafo" />
+          </div>
+        </div>
+      </section>
+
+      <section class="portfolio" id="portfolio">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Portfolio</p>
+            <h2>Una mirada cercana, auténtica y elegante.</h2>
+          </div>
+
+          <div class="gallery-grid">
+            {% for project in projects %}
+            <article class="project-card">
+              <img src="{{ project.image }}" alt="{{ project.title }}" />
+              <div class="card-info">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.location }}</p>
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="container about-grid">
+          <div class="about-photo">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" alt="Fotógrafo" />
+          </div>
+          <div class="about-copy">
+            <p class="eyebrow">Sobre mí</p>
+            <h2>La fotografía como forma de contar historias.</h2>
+            <p>
+              Soy Fran, fotógrafo especializado en retratos y proyectos personales. Me interesa la
+              conexión emocional y la belleza de lo cotidiano, por eso trabajo con una estética limpia,
+              cálida y muy cercana.
+            </p>
+            <p>
+              Cada sesión se desarrolla con calma y naturalidad para que las personas se sientan en
+              su ambiente y puedan ser fotografiadas tal y como son.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="services" id="services">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Servicios</p>
+            <h2>Para momentos que merecen ser recordados.</h2>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-box">
+              <span>01</span>
+              <h3>Retratos</h3>
+              <p>Sesiones personales, profesionales y lifestyle con una dirección estética natural.</p>
+            </article>
+            <article class="service-box">
+              <span>02</span>
+              <h3>Bodas</h3>
+              <p>Documentación emocional y visual de tu día más importante con un estilo íntimo.</p>
+            </article>
+            <article class="service-box">
+              <span>03</span>
+              <h3>Viajes</h3>
+              <p>Fotografías que reflejan lugares, paisajes y experiencias con una mirada narrativa.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="container contact-box">
+          <div>
+            <p class="eyebrow">Contacto</p>
+            <h2>Hablemos de tu proyecto.</h2>
+          </div>
+          <a href="mailto:fran@frannovi.com" class="btn btn-primary">fran@frannovi.com</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Fran Novi</p>
+        <div class="socials">
+          <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://behance.net" target="_blank" rel="noreferrer">Behance</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
